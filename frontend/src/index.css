@@ -1,0 +1,131 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ──────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  background-color: #0a0a0f;
+  color: #e2e8f0;
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0f; }
+::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a855f7; }
+
+/* ── Neon text glow ────────────────────────────────────────── */
+.neon-text {
+  color: #00f5ff;
+  text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 40px #00f5ff;
+}
+.neon-purple {
+  color: #a855f7;
+  text-shadow: 0 0 10px #a855f7, 0 0 20px #7c3aed;
+}
+
+/* ── Card glass effect ─────────────────────────────────────── */
+.glass-card {
+  background: rgba(26, 26, 39, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+/* ── Gradient borders ──────────────────────────────────────── */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #7c3aed, #00f5ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ── Post content typography ───────────────────────────────── */
+.prose-gaming {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+.prose-gaming h1, .prose-gaming h2, .prose-gaming h3 {
+  font-family: 'Rajdhani', sans-serif;
+  color: #e2e8f0;
+  font-weight: 700;
+}
+.prose-gaming h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  border-left: 3px solid #7c3aed;
+  padding-left: 1rem;
+}
+.prose-gaming p { margin-bottom: 1.2rem; }
+.prose-gaming a { color: #a855f7; text-decoration: underline; }
+.prose-gaming strong { color: #e2e8f0; }
+.prose-gaming code {
+  background: #1a1a27;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #00f5ff;
+}
+
+/* ── Loading spinner ───────────────────────────────────────── */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(124, 58, 237, 0.2);
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Skeleton loader ───────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #1a1a27 25%, #2a2a3d 50%, #1a1a27 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Page transition ───────────────────────────────────────── */
+.page-enter { animation: fadeIn 0.35s ease-out; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tag pill ──────────────────────────────────────────────── */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  color: #a855f7;
+  transition: all 0.2s;
+}
+.tag-pill:hover {
+  background: rgba(124, 58, 237, 0.3);
+  border-color: #a855f7;
+}
