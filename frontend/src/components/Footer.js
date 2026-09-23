@@ -51,11 +51,6 @@ export default function Footer() {
                     className="text-gaming-muted hover:text-gaming-accent-light text-sm flex items-center gap-2 transition-colors"
                   >
                     <span>{cat.icon}</span> {cat.name}
-                    {cat.postCount > 0 && (
-                      <span className="ml-auto text-xs bg-gaming-card px-2 py-0.5 rounded-full">
-                        {cat.postCount}
-                      </span>
-                    )}
                   </Link>
                 </li>
               ))}
