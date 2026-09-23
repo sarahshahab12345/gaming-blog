@@ -1,5 +1,7 @@
 # 🎮 PixelGate — MERN Gaming Blog
 
+<img width="1299" height="527" alt="image" src="https://github.com/user-attachments/assets/16d965d1-18e2-4e35-8e49-154249845899" />
+
 A full-stack gaming blog built with MongoDB, Express.js, React.js, and Node.js.  
 Features a dark neon UI, JWT-secured admin panel, CRUD posts, categories, comments, likes, search, and pagination.
 
